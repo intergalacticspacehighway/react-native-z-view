@@ -31,6 +31,16 @@ import { ZView } from 'react-native-z-view'
 
 ## Examples
 
+### Adjust Position
+
+```jsx
+<ZView top={10} left={40}>
+  <View>
+    <Text>This will show on top of all the views!<Text>
+  </View>
+</ZView>
+```
+
 ### Full Size Overlay
 
 ```jsx
@@ -43,6 +53,7 @@ const { width, height } = Dimensions.get('window')
     style={{
       width,
       height,
+      backgroundColor: 'rgba(0, 0, 0, 0.5)'
     }}
   >
     <Text>Full size overlay view</Text>
