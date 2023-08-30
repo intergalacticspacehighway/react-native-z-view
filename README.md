@@ -17,7 +17,7 @@ import { ZView } from 'react-native-z-view'
 
 <ZView>
   <View>
-    <Text>This will show on top of all the views!<Text>
+    <Text>This will be shown on top of all the views!<Text>
   </View>
 </ZView>
 ```
