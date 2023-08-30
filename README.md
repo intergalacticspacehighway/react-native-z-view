@@ -20,13 +20,13 @@ npm install react-native-z-view react-native-screens
 ## Usage
 
 ```jsx
-import { ZView } from 'react-native-z-view';
+import { ZView } from 'react-native-z-view'
 
 <ZView>
   <View>
     <Text>This will show on top of all the views!<Text>
   </View>
-</ZView>;
+</ZView>
 ```
 
 ## Props
@@ -36,14 +36,14 @@ import { ZView } from 'react-native-z-view';
 - `bottom` - To adjust bottom value. Similar to `bottom` in position fixed. Accepts percentage and point values.
 - `right` - To adjust right value. Similar to `right` in position fixed. Accepts percentage and point values.
 
-## Usecase
+## Examples
 
 ### Full Size Overlay
 
 ```jsx
-import { Dimensions } from 'react-native';
+import { Dimensions } from 'react-native'
 
-const { width, height } = Dimensions.get('window');
+const { width, height } = Dimensions.get('window')
 
 <ZView>
   <View
@@ -54,7 +54,7 @@ const { width, height } = Dimensions.get('window');
   >
     <Text>Full size overlay view</Text>
   </View>
-</ZView>;
+</ZView>
 ```
 
 ## Contributing
