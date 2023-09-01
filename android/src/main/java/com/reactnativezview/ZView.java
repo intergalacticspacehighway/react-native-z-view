@@ -1,8 +1,8 @@
 package com.reactnativezview;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.PixelFormat;
+import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import com.facebook.react.bridge.Dynamic;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.ReadableType;
+import com.facebook.react.uimanager.DisplayMetricsHolder;
 import com.facebook.react.uimanager.PixelUtil;
 import com.facebook.react.views.view.ReactViewGroup;
 
@@ -40,7 +41,8 @@ public class ZView extends ReactViewGroup {
                 WindowManager.LayoutParams.TYPE_APPLICATION,
                 WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
                 | WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
-                | WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                | WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+                        | WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN,
                 PixelFormat.TRANSLUCENT);
 
         windowParams.gravity = Gravity.TOP | Gravity.LEFT;
@@ -103,8 +105,9 @@ public class ZView extends ReactViewGroup {
         if (mHostView != null) {
             int decorWidth = this.mHostView.getWidth();
             int decorHeight = this.mHostView.getHeight();
-            int screenWidth = Resources.getSystem().getDisplayMetrics().widthPixels;
-            int screenHeight = Resources.getSystem().getDisplayMetrics().heightPixels;
+            DisplayMetrics displayMetrics = DisplayMetricsHolder.getScreenDisplayMetrics();
+            int screenWidth = displayMetrics.widthPixels;
+            int screenHeight = displayMetrics.heightPixels;
             int top = 0;
             int left = 0;
             if (coords != null) {
