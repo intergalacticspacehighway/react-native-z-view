@@ -5,13 +5,8 @@ import androidx.annotation.Nullable;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReadableMap;
-import com.facebook.react.uimanager.PointerEvents;
 import com.facebook.react.uimanager.ThemedReactContext;
-import com.facebook.react.uimanager.UIManagerHelper;
-import com.facebook.react.uimanager.ViewGroupManager;
-import com.facebook.react.uimanager.ViewProps;
 import com.facebook.react.uimanager.annotations.ReactProp;
-import com.facebook.react.uimanager.events.EventDispatcher;
 import com.facebook.react.views.view.ReactViewGroup;
 import com.facebook.react.views.view.ReactViewManager;
 

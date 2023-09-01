@@ -4,12 +4,10 @@ package com.reactnativezview;
 import android.content.Context;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
 
 import com.facebook.react.config.ReactFeatureFlags;
-import com.facebook.react.uimanager.FabricViewStateManager;
 import com.facebook.react.uimanager.JSPointerDispatcher;
 import com.facebook.react.uimanager.JSTouchDispatcher;
 import com.facebook.react.uimanager.RootView;

@@ -2,10 +2,8 @@ package com.reactnativezview;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.view.Gravity;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 
@@ -14,14 +12,7 @@ import androidx.annotation.Nullable;
 import com.facebook.react.bridge.Dynamic;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.ReadableType;
-import com.facebook.react.config.ReactFeatureFlags;
-import com.facebook.react.uimanager.FabricViewStateManager;
-import com.facebook.react.uimanager.JSPointerDispatcher;
-import com.facebook.react.uimanager.JSTouchDispatcher;
 import com.facebook.react.uimanager.PixelUtil;
-import com.facebook.react.uimanager.RootView;
-import com.facebook.react.uimanager.ThemedReactContext;
-import com.facebook.react.uimanager.events.EventDispatcher;
 import com.facebook.react.views.view.ReactViewGroup;
 
 public class ZView extends ReactViewGroup {
@@ -77,11 +68,14 @@ public class ZView extends ReactViewGroup {
         super.onLayout(changed, left, top, right, bottom);
         int width = right - left;
         int height = bottom - top;
-        WindowManager.LayoutParams existingParams = (WindowManager.LayoutParams) this.mHostView.getLayoutParams();
-        existingParams.width = width;
-        existingParams.height = height;
-        windowManager.updateViewLayout(mHostView, existingParams);
-        updateXAndY();
+        if (mHostView != null) {
+            WindowManager.LayoutParams existingParams = (WindowManager.LayoutParams) this.mHostView.getLayoutParams();
+            existingParams.width = width;
+            existingParams.height = height;
+            windowManager.updateViewLayout(mHostView, existingParams);
+            updateXAndY();
+        }
+
     }
 
 
