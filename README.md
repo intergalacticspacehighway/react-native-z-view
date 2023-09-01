@@ -28,7 +28,7 @@ import { ZView } from 'react-native-z-view'
 - `left` - To adjust left value. Similar to `left` in position fixed. Accepts percentage and point values.
 - `bottom` - To adjust bottom value. Similar to `bottom` in position fixed. Accepts percentage and point values.
 - `right` - To adjust right value. Similar to `right` in position fixed. Accepts percentage and point values.
-- `touchable` - Make the entire ZView non-touchable. Allows passing touch events to the behind view of ZView itself.
+- `touchable` (default: `true`) - Setting it to false makes the entire ZView non-touchable which allows passing touch events to the behind view of ZView itself.
 
 ## Examples
 
